@@ -1,4 +1,4 @@
-# projeto-GDI
+# Projeto - GDI
 ## Grupo:
 * Maria Clara Alves Acruchi (mcaa)
 * Maria Luísa dos Santos Silva (mlss)
