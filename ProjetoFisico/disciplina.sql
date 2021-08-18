@@ -1,25 +1,3 @@
-/*
-Adivinhação 
-Alquimia 
-Aparatação 
-Aritmância 
-Arte Trouxa 
-Artes das Trevas 
-Astronomia
-Defesa Contra as Artes das Trevas
-Estudo das Runas Antigas
-Estudo dos Trouxas
-Estudos Antigos
-Estudos Avançados de Aritmância
-Feitiços 
-Herbologia
-História da Magia
-Poções
-Teoria da Magia
-Transfiguração
-Trato das Criaturas Mágicas
-*/
-
 INSERT INTO disciplina(cod_disciplina, grade_horario_hora,grade_horario_dia1,grade_horario_dia2,varinha) 
 VALUES ('HB','20:00','QUI','TER','PS'); -- Herbologia
 

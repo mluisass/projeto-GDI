@@ -1,0 +1,10 @@
+drop table cursa;
+drop table participa;
+drop table magias;
+drop table monitoria;
+drop table animal_de_estimacao;
+drop table disciplina;
+drop table aluno;
+drop table professor;
+drop table bruxo;
+drop table casa;

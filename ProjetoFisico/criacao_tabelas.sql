@@ -21,7 +21,7 @@ CREATE TABLE professor(
     varinha VARCHAR(10) NOT NULL,
     cod_professor NUMBER,
     especializacao VARCHAR (20),
-    chefe NUMBER,
+    chefe VARCHAR(10),
     CONSTRAINT pk_professor PRIMARY KEY (varinha),
     CONSTRAINT fk_professor FOREIGN KEY (varinha) REFERENCES bruxo(varinha),
     CONSTRAINT fk_chefe FOREIGN KEY (chefe) REFERENCES professor(varinha)
@@ -33,12 +33,12 @@ CREATE TABLE aluno (
     CONSTRAINT fk_aluno FOREIGN KEY (varinha) REFERENCES bruxo(varinha)
 );
 CREATE TABLE disciplina(
+    varinha VARCHAR(10) NOT NULL,
     cod_disciplina VARCHAR(10) NOT NULL,
     grade_horario_hora VARCHAR(5),
     grade_horario_dia1 VARCHAR(3),
     grade_horario_dia2 VARCHAR(3),
     grade_horario_dia3 VARCHAR(3),
-    varinha NUMBER NOT NULL,
     CONSTRAINT pk_disciplina PRIMARY KEY (cod_disciplina),
     CONSTRAINT fk_disciplina FOREIGN KEY (varinha) REFERENCES professor(varinha)
 );

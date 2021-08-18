@@ -1,12 +1,3 @@
-CREATE TABLE cursa (
-    varinha NUMBER NOT NULL,
-    cod_disciplina NUMBER NOT NULL,
-    dt_inicio DATE NOT NULL,
-    CONSTRAINT pk_cursa PRIMARY KEY (varinha, cod_disciplina, dt_inicio),
-    CONSTRAINT fk_cursa_aluno FOREIGN KEY (varinha) REFERENCES aluno(varinha),
-    CONSTRAINT fk_cursa_disci FOREIGN KEY (cod_disciplina) REFERENCES disciplina(cod_disciplina)
-); -- ano-mes-dia
-
 -----grifinoria
 INSERT INTO (varinha, cod_disciplina, dt_inicio)
 VALUES ('HP','HB', '1994-09-10');
