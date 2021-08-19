@@ -156,3 +156,6 @@ VALUES ('LL','TM', date'1993-09-01');
 
 INSERT INTO cursa(varinha, cod_disciplina, dt_inicio) 
 VALUES ('CC','TM', date'1993-09-01');
+
+INSERT INTO cursa(varinha, cod_disciplina, dt_inicio) 
+VALUES ('RLS','TM', date'1993-09-01');

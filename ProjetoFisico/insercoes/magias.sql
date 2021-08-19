@@ -71,3 +71,9 @@ VALUES ('AD', 'Accio');
 
 INSERT INTO magias(varinha, magia)
 VALUES ('SS', 'Expecto Patronum');
+
+INSERT INTO magias(varinha, magia)
+VALUES ('RLS', 'Expelliarmus');
+
+INSERT INTO magias(varinha, magia)
+VALUES ('RLS', 'Accio');

@@ -1,0 +1,44 @@
+X Group by/Having X - OK
+
+group by e having:
+(se fosse prof precisava de inner)
+- projetar as varinhas dos alunos que cursaram mais 3 disciplinas em 1993
+    1. filtrar o ano 1993
+    2. agrupar as disciplinas por aluno (na tabela cursa)
+    3. contar a quantidade de disciplinas de cada agrupamento
+    4. projetar apenas os que são > 3
+
+X Junção interna X - OK
+
+inner join
+  tabelas:
+    - professor + disciplina
+    - animais de estimação
+  ideias:
+    - nome dos alunos e o nome seus pets
+    - nome do professor e de sua disciplina que têm aulas após o meio dia
+
+
+X Junção externa X - OK  
+ideias:
+    - nome de todos os pets e a varinha de seus donos (bruxo)
+
+X Semi junção X - OK
+  - projetar o nome dos professores que têm aulas na segunda
+
+X Anti-junção X - OK
+  nao existe um dia igual null
+  projetar aluno sem pet
+
+X Subconsulta do tipo escalar X - OK
+
+X Subconsulta do tipo linha X - OK
+
+X Subconsulta do tipo tabela X - OK
+
+- Operação de conjunto
+
+- PL/SQL:
+  - função
+  - procedimento
+  - gatilho

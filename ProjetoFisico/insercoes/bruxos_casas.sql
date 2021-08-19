@@ -31,6 +31,9 @@ INSERT INTO bruxo (varinha, nome_bruxo, dt_nascimento, end_CEP, end_logradouro, 
 VALUES ('GW', 'Gina Weasley', date'1980-07-31', CEPs.nextval, 'A Toca', 'Grifinoria');
 
 INSERT INTO bruxo (varinha, nome_bruxo, dt_nascimento, end_CEP, end_logradouro, nome_casa)
+VALUES ('RLS', 'Rebecca Lima', date'1978-01-10', CEPs.nextval, 'Dormitorio G', 'Grifinoria');
+
+INSERT INTO bruxo (varinha, nome_bruxo, dt_nascimento, end_CEP, end_logradouro, nome_casa)
 VALUES ('VG', 'Vincent Crabbe', date'1980-09-02', CEPs.nextval, 'Dormitorio S','Sonserina');
 
 INSERT INTO bruxo (varinha, nome_bruxo, dt_nascimento, end_CEP, end_logradouro, nome_casa)

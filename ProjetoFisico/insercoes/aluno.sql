@@ -23,3 +23,5 @@ INSERT INTO aluno(varinha,matricula) VALUES ('LL',MATs.nextval);
 INSERT INTO aluno(varinha,matricula) VALUES ('CC',MATs.nextval);
 
 INSERT INTO aluno(varinha,matricula) VALUES ('DM',MATs.nextval);
+
+INSERT INTO aluno(varinha,matricula) VALUES ('RLS',MATs.nextval);
