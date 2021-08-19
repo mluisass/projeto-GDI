@@ -20,9 +20,6 @@ VALUES ('HP','DCAT', date'1994-09-10');
 INSERT INTO cursa (varinha, cod_disciplina, dt_inicio)
 VALUES ('DM','DCAT', date'1994-09-10');
 
-INSERT INTO cursa (varinha, cod_disciplina, dt_inicio)
-VALUES ('LL','DCAT', date'1994-09-10');
-
 ----- lufa-lufa
 INSERT INTO cursa (varinha, cod_disciplina, dt_inicio)
 VALUES ('NT','HB', date'1994-09-10');
