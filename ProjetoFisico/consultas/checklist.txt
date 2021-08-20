@@ -27,8 +27,7 @@ X Semi junção X - OK
   - projetar o nome dos professores que têm aulas na segunda
 
 X Anti-junção X - OK
-  nao existe um dia igual null
-  projetar aluno sem pet
+  Projetar a matricula e o nome dos alunos que nao tem animal de estimação
 
 X Subconsulta do tipo escalar X - OK
 
@@ -36,9 +35,31 @@ X Subconsulta do tipo linha X - OK
 
 X Subconsulta do tipo tabela X - OK
 
-- Operação de conjunto
+X Operação de conjunto X - OK
+  - Projetar as iniciais (varinhas), os códigos dos professores e as matriculas alunos que começam com a letra 'R'
 
 - PL/SQL:
-  - função
-  - procedimento
+  X função X -OK
+    - retornar quantas magias um bruxo sabe
+  X procedimento X - OK
+    - printa a varinha dos alunos que cursam uma determinada disciplina
   - gatilho
+    - Checagem se o prof/aluno inserido não é aluno ou professor
+    - Toda vez que adicionar um aluno aumentar qtd_alunos
+    - Toda vez que adicionar um monitor aumentar qtd_monitores
+
+
+
+
+
+-- Consulta extra: (semjoin)
+
+--monitores sem animal
+SELECT B.nome_bruxo
+FROM bruxo B
+WHERE B.varinha IN (
+  SELECT P.varinha
+  FROM participa P
+  WHERE P.id_animal IS NULL
+);
+

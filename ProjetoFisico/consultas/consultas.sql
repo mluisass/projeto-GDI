@@ -66,13 +66,15 @@ AND (EXTRACT(YEAR FROM B.dt_nascimento), B.nome_casa) = (
     WHERE B1.nome_bruxo = 'Harry Potter'
 ); -- linha
 
--- extra (semi join)
 
---monitores sem animal
-SELECT B.nome_bruxo
-FROM bruxo B
-WHERE B.varinha IN (
-  SELECT P.varinha
-  FROM participa P
-  WHERE P.id_animal IS NULL
-);
+-- 7. Operação de Conjunto
+-- Projetar as iniciais (varinhas), os códigos dos professores e as matriculas alunos que começam com a letra 'R'
+
+(SELECT A.varinha AS iniciais, A.matricula AS identifier
+FROM aluno A
+WHERE A.varinha LIKE 'R%')
+UNION 
+(SELECT P.varinha, P.cod_professor
+FROM professor P
+WHERE P.varinha LIKE 'R%');
+-- funciona porque cod_professor e matricula são do mesmo tipo (number)
