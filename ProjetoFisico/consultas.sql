@@ -1,9 +1,9 @@
 -- CONSULTAS
 
 -- 1. X Group by/Having X
--- Projetar as varinhas dos alunos que cursaram mais 3 disciplinas em 1993
+-- Projetar as varinhas dos alunos que cursaram mais de 3 disciplinas em 1993
 
-SELECT varinha, COUNT(*)as qtd
+SELECT varinha, COUNT(*)AS qtd
 FROM cursa 
 WHERE EXTRACT(YEAR FROM dt_inicio) = 1993
 GROUP BY varinha 
