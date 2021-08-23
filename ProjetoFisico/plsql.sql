@@ -21,7 +21,7 @@ BEGIN
     R:='HB';
     cursando(R);
 END;
-
+/
 ------------------------------------------------------------------------
 
 -- Função para contar a quantidade de magias aprendidas por um determinado bruxo 
@@ -37,7 +37,7 @@ BEGIN
         WHEN NO_DATA_FOUND THEN
             RETURN NULL;
 END;
-
+/
 -- Bloco anônimo para chamar a função acima
 DECLARE
     I VARCHAR(3);
@@ -48,6 +48,7 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Quantidade de magias: ' || O);
 END;
 
+/
 ------------------------------------------------------------------------
 
 -- GATILHOS
@@ -69,7 +70,7 @@ BEGIN
         WHERE nome_casa = :NEW.nome_casa;
     END IF;
 END;
-
+/
 
 -- Toda vez que adicionar ou deletar um monitor, atualizar qtd_monitores em monitoria
 
@@ -90,23 +91,38 @@ BEGIN
     END IF;
 END;
 
-
+/
 -- Checar se a herança professor e aluno é disjunta
 
 CREATE OR REPLACE TRIGGER check_aluno_prof
-BEFORE INSERT ON aluno OR professor
+BEFORE INSERT ON aluno
 FOR EACH ROW
+DECLARE
+    achei NUMBER;
 BEGIN
-    IF INSERTING ON aluno THEN
-        -- procurar se tem aquela varinha em prof, se tiver: ERRO
-        IF (SELECT * FROM professor 
-        WHERE varinha = :NEW.varinha) IS NOT NULL THEN
-            DBMS_OUTPUT.PUT_LINE('FRASE');
-    ELSE
-        -- procurar se tem aquela varinha em aluno, se tiver: ERRO
-         IF (SELECT * FROM aluno
-        WHERE varinha = :NEW.varinha) IS NOT NULL THEN
-            DBMS_OUTPUT.PUT_LINE('FRASE');
-        END IF;
+    -- procurar se tem aquela varinha em aluno, se tiver: ERRO
+    SELECT COUNT(*) INTO achei
+    FROM professor 
+    WHERE varinha = :NEW.varinha;
+    IF achei > 0 THEN
+        RAISE_APPLICATION_ERROR(-20205,'ESSE BRUXO NÃO PODE SER UM ALUNO PORQUE JÁ É UM PROFESSOR!!!');
     END IF;
 END;
+
+/
+
+CREATE OR REPLACE TRIGGER check_prof_aluno
+BEFORE INSERT ON professor
+FOR EACH ROW
+DECLARE
+    achei NUMBER;
+BEGIN
+    -- procurar se tem aquela varinha em aluno, se tiver: ERRO
+    SELECT COUNT(*) INTO achei
+    FROM aluno 
+    WHERE varinha = :NEW.varinha;
+    IF achei > 0 THEN
+        RAISE_APPLICATION_ERROR(-20205,'ESSE BRUXO NÃO PODE SER UM ALUNO PORQUE JÁ É UM PROFESSOR!!!');
+    END IF;
+END;
+/
