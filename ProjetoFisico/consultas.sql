@@ -1,3 +1,5 @@
+-- CONSULTAS
+
 -- 1. X Group by/Having X
 -- Projetar as varinhas dos alunos que cursaram mais 3 disciplinas em 1993
 
@@ -10,7 +12,7 @@ HAVING COUNT(*) > 3;
 -- 2. X Junção interna X
 -- Nome do professor e de sua disciplina que têm aulas após o meio dia
 
-SELECT B.nome_bruxo, D.cod_disciplina
+SELECT B.nome_bruxo, D.cod_disciplina, D.grade_horario_hora
 FROM bruxo B INNER JOIN disciplina D ON D.varinha = B.varinha
 WHERE D.grade_horario_hora > '12:00';
 
@@ -23,6 +25,7 @@ ON P.id_animal = A.id_animal;
 
 -- 4. X Semi join X 
 -- Projetar o nome dos professores que lecionam alguma disciplina
+-- A subconsulta é do tipo tabela
 
 SELECT B.nome_bruxo
 FROM bruxo B
@@ -34,6 +37,7 @@ WHERE EXISTS (
 
 -- 5. X Anti Join X
 -- Projetar a matricula e o nome dos alunos que nao tem animal de estimação
+-- A subconsulta é do tipo tabela
 
 SELECT A.matricula, B.nome_bruxo
 FROM aluno A INNER JOIN bruxo B ON B.varinha = A.varinha
@@ -41,7 +45,7 @@ WHERE NOT EXISTS (
   SELECT *
   FROM participa P
   WHERE A.varinha = P.varinha AND P.id_animal IS NOT NULL
-); -- tabela
+);
 
 -- 6. X Subconsulta do tipo escalar X
 -- Projetar todos os nomes e dt_nascimento dos bruxos mais velhos que o professor de varinha = 'SS'
@@ -52,19 +56,19 @@ WHERE B.dt_nascimento < (
     SELECT B1.dt_nascimento
     FROM bruxo B1
     WHERE B1.varinha = 'SS'
-); -- escalar
+); 
 
 -- 6. X Subconsulta do tipo linha X
 -- Bruxos que nasceram no mesmo ano e que são da mesma casa que "Harry Potter"
 
 SELECT B.nome_bruxo
 FROM bruxo B
-WHERE B.nome_bruxo <> 'Harry Potter' -- que nao seja harry
+WHERE B.nome_bruxo <> 'Harry Potter' 
 AND (EXTRACT(YEAR FROM B.dt_nascimento), B.nome_casa) = (
     SELECT EXTRACT(YEAR FROM B1.dt_nascimento), B1.nome_casa
     FROM bruxo B1
     WHERE B1.nome_bruxo = 'Harry Potter'
-); -- linha
+); 
 
 
 -- 7. Operação de Conjunto
@@ -78,3 +82,4 @@ UNION
 FROM professor P
 WHERE P.varinha LIKE 'R%');
 -- funciona porque cod_professor e matricula são do mesmo tipo (number)
+

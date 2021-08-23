@@ -1,10 +1,10 @@
 -- Criacao da tabelas 
 CREATE TABLE casa(
     nome_casa VARCHAR(15) NOT NULL,
-    qtd_alunos NUMBER DEFAULT 0, -- colocar um trigger pra toda vez que adicionar um aluno aumentar a quantidade
+    qtd_bruxos NUMBER DEFAULT 0, -- colocar um trigger pra toda vez que adicionar um aluno aumentar a quantidade
     cor_1 VARCHAR(15),
     cor_2 VARCHAR(15),
-	CONSTRAINT chk_aluno CHECK (qtd_alunos > -1),
+	CONSTRAINT chk_bruxo CHECK (qtd_bruxos > -1),
     CONSTRAINT pk_casa PRIMARY KEY (nome_casa)
 );
 CREATE TABLE bruxo(
@@ -50,9 +50,9 @@ CREATE TABLE animal_de_estimacao (
 );
 CREATE TABLE monitoria(
     nome_casa VARCHAR(15) NOT NULL,
-    qtd_monitores NUMBER, -- tem que aumentar sempre que adicionar um monitor novo
+    qtd_monitores NUMBER DEFAULT 0, -- tem que aumentar sempre que adicionar um monitor novo
     cod_sala NUMBER,
-	  CONSTRAINT chk_qtd CHECK (qtd_monitores BETWEEN 0 AND 5),
+	CONSTRAINT chk_qtd CHECK (qtd_monitores BETWEEN 0 AND 5),
     CONSTRAINT pk_monitoria PRIMARY KEY (nome_casa),
     CONSTRAINT fk_monitoria FOREIGN KEY (nome_casa) REFERENCES casa (nome_casa)
 );

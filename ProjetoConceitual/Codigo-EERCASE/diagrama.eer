@@ -36,7 +36,7 @@
     <nodes xmi:type="eer:Attribute" xmi:id="_qkRssMvMEeu9BorDpURXCA" name="matrícula" isUnique="true" dataType="INTEGER" AttributeLinkTarget="_sTSMMMvMEeu9BorDpURXCA"/>
     <nodes xmi:type="eer:Attribute" xmi:id="_0sc2kMvMEeu9BorDpURXCA" name="cod_professor" AttributeLinkTarget="_3Y4AkMvMEeu9BorDpURXCA"/>
     <nodes xmi:type="eer:Attribute" xmi:id="_C4ilUN32EeuHz7F1puY9sA" name="cod_sala" dataType="INTEGER" AttributeLinkTarget="_InJG4N32EeuHz7F1puY9sA"/>
-    <nodes xmi:type="eer:Attribute" xmi:id="_xjCcoN32EeuHz7F1puY9sA" name="qtd_alunos" AttributeLinkTarget="_1s0VcN32EeuHz7F1puY9sA"/>
+    <nodes xmi:type="eer:Attribute" xmi:id="_xjCcoN32EeuHz7F1puY9sA" name="qtd_bruxos" AttributeLinkTarget="_1s0VcN32EeuHz7F1puY9sA"/>
     <nodes xmi:type="eer:Attribute" xmi:id="_8Kb5IN32EeuHz7F1puY9sA" name="cores" type="MULTIVALUED" AttributeLinkTarget="_EdhJoN33EeuHz7F1puY9sA"/>
     <nodes xmi:type="eer:Attribute" xmi:id="_MK3P0N33EeuHz7F1puY9sA" name="grade_horário" AttributeLinkSource="_9uP_0N33EeuHz7F1puY9sA _979EoN33EeuHz7F1puY9sA" AttributeLinkTarget="_8KGsgN33EeuHz7F1puY9sA"/>
     <nodes xmi:type="eer:Attribute" xmi:id="_oRCQUN33EeuHz7F1puY9sA" name="hora" AttributeLinkTarget="_979EoN33EeuHz7F1puY9sA"/>

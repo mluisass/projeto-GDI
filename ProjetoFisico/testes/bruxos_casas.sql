@@ -75,3 +75,8 @@ VALUES ('GL', 'Gilderoy Lockhart', date'1964-01-26', CEPs.nextval, 'Hogwarts Sal
 
 INSERT INTO bruxo (varinha, nome_bruxo, dt_nascimento, end_CEP, end_logradouro, nome_casa)
 VALUES ('RL', 'Remo Lupin', date'1960-03-10', CEPs.nextval, 'Hogwarts Sala G1', 'Grifinoria');
+
+--bruxo que nao é professor nem aluno
+
+INSERT INTO bruxo (varinha, nome_bruxo, dt_nascimento, end_CEP, end_logradouro, nome_casa)
+VALUES ('RH', 'Rubeo Hagrid', date'1928-12-06', CEPs.nextval, 'Cabana próxima à Floresta Proibida', 'Grifinoria');
