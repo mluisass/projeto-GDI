@@ -65,7 +65,7 @@
     <links xmi:type="eer:RelationshipLink" xmi:id="_oceaEMvJEeu9BorDpURXCA" source="_aA-rwMvHEeu9BorDpURXCA" target="_aMKLkMvIEeu9BorDpURXCA" cardinality="MANY"/>
     <links xmi:type="eer:AttributeLink" xmi:id="_-hWmgMvJEeu9BorDpURXCA" source="_aA-rwMvHEeu9BorDpURXCA" target="_12QeoMvJEeu9BorDpURXCA"/>
     <links xmi:type="eer:RelationshipLink" xmi:id="_BcT7wMvKEeu9BorDpURXCA" source="_ZrbSgMvHEeu9BorDpURXCA" target="_aPUNQMvIEeu9BorDpURXCA"/>
-    <links xmi:type="eer:RelationshipLink" xmi:id="_B6MKkMvKEeu9BorDpURXCA" source="_aA-rwMvHEeu9BorDpURXCA" target="_aPUNQMvIEeu9BorDpURXCA" cardinality="MANY"/>
+    <links xmi:type="eer:RelationshipLink" xmi:id="_B6MKkMvKEeu9BorDpURXCA" source="_aA-rwMvHEeu9BorDpURXCA" target="_aPUNQMvIEeu9BorDpURXCA" participation="TOTAL" cardinality="MANY"/>
     <links xmi:type="eer:InheritanceGL" xmi:id="_K7JNsMvKEeu9BorDpURXCA" source="_Zmmc4MvHEeu9BorDpURXCA" target="_GlfcEMvKEeu9BorDpURXCA"/>
     <links xmi:type="eer:InheritanceSL" xmi:id="_Pm-qsMvKEeu9BorDpURXCA" source="_ZzgQcMvHEeu9BorDpURXCA" target="_GlfcEMvKEeu9BorDpURXCA"/>
     <links xmi:type="eer:InheritanceSL" xmi:id="_QxiZUMvKEeu9BorDpURXCA" source="_ZrbSgMvHEeu9BorDpURXCA" target="_GlfcEMvKEeu9BorDpURXCA"/>
