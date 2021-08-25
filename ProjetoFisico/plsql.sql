@@ -14,13 +14,8 @@ BEGIN
     END LOOP; 
 END;
 
--- Bloco anônimo para chamar o procedimento acima
-DECLARE 
-    R VARCHAR(3);
-BEGIN
-    R:='HB';
-    cursando(R);
-END;
+-- Chamando o procedimento acima
+exec cursando('HB');
 /
 ------------------------------------------------------------------------
 

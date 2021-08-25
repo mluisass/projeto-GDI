@@ -17,7 +17,7 @@ FROM bruxo B INNER JOIN disciplina D ON D.varinha = B.varinha
 WHERE D.grade_horario_hora > '12:00';
 
 -- 3. X Junção externa X -- outer join
--- Nome de todos os pets e a varinha de seus donos (bruxo)
+-- Nome de todos os animais de estimação e a varinha de seus donos (bruxos)
 
 SELECT A.nome_animal, P.varinha
 FROM animal_de_estimacao A LEFT OUTER JOIN participa P 
@@ -37,7 +37,7 @@ WHERE EXISTS (
 
 -- 5. X Anti Join X
 -- Projetar a matricula e o nome dos alunos que nao tem animal de estimação
--- A subconsulta é do tipo tabela
+-- A subconsulta é do tipo linha
 
 SELECT A.matricula, B.nome_bruxo
 FROM aluno A INNER JOIN bruxo B ON B.varinha = A.varinha
@@ -59,7 +59,7 @@ WHERE B.dt_nascimento < (
 ); 
 
 -- 6. X Subconsulta do tipo linha X
--- Bruxos que nasceram no mesmo ano e que são da mesma casa que "Harry Potter"
+-- Projetar bruxos que nasceram no mesmo ano e que são da mesma casa que "Harry Potter" exceto ele mesmo
 
 SELECT B.nome_bruxo
 FROM bruxo B
@@ -72,11 +72,11 @@ AND (EXTRACT(YEAR FROM B.dt_nascimento), B.nome_casa) = (
 
 
 -- 7. Operação de Conjunto
--- Projetar as iniciais (varinhas), os códigos dos professores e as matriculas alunos que começam com a letra 'R'
+-- Projetar os códigos dos professores e as matrículas alunos cujas varinhas (iniciais) começam com a letra 'R'
 
-(SELECT A.varinha AS iniciais, A.matricula AS identifier
+SELECT A.varinha AS iniciais, A.matricula AS identifier
 FROM aluno A
-WHERE A.varinha LIKE 'R%')
+WHERE A.varinha LIKE 'R%'
 UNION 
 (SELECT P.varinha, P.cod_professor
 FROM professor P
