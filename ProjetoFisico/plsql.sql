@@ -53,7 +53,7 @@ END;
 
 -- GATILHOS
 
--- Toda vez que adicionar ou deletar um aluno, atualizar qtd_bruxos da casa
+-- Toda vez que adicionar ou deletar um bruxo, atualizar qtd_bruxos da casa
 CREATE OR REPLACE TRIGGER atualizar_qtd_bruxos
 AFTER INSERT OR DELETE ON bruxo
 FOR EACH ROW
